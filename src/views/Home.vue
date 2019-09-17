@@ -1,18 +1,14 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Vinieron de san isidro" />
+    <h1 class="text-center text-muted" v-text="appName"></h1>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
-
-@Component({
-  components: {
-    HelloWorld
-  }
-})
-export default class Home extends Vue {}
+import { State } from "vuex-class";
+@Component
+export default class Home extends Vue {
+  @State("appName") appName!: string;
+}
 </script>

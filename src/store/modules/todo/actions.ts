@@ -2,7 +2,7 @@
 //Cuando una request esta completada, esta mutara a nuestro state,
 //dependiendo la accion requerida. 
 
-import Vue from 'Vue';
+import Vue from 'vue';
 import { ActionContext, ActionTree } from 'vuex';
 import { TodoState, Todo } from '@/store/modules/todo/types'
 import { RootState } from '@/store/types';

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1 class="text-center text-muted" v-text="appName"></h1>
+    <h1 class="text-center text-muted" v-text="appName + ' ' +appVersion"></h1>
   </div>
 </template>
 
@@ -10,5 +10,6 @@ import { State } from "vuex-class";
 @Component
 export default class Home extends Vue {
   @State("appName") appName!: string;
+  @State("appVersion") appVersion!: string;
 }
 </script>

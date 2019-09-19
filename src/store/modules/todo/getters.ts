@@ -1,0 +1,18 @@
+import { GetterTree } from 'vuex';
+import { Todo, TodoState } from '@/store/modules/todo/types';
+import { RootState } from '@/store/types';
+
+type TodoGetter = GetterTree<TodoState, RootState>;
+
+export const getters: TodoGetter = {
+    //we return todos with true value
+    done(state: TodoState): Todo[] {
+        const { todos } = state;
+        return todos.filter(todo => todo.done);
+    },
+
+    todos(state: TodoState): Todo[] {
+        const { todos } = state;
+        return todos.filter(todo => !todo.done);
+    }
+}

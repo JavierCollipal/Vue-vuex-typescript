@@ -9,8 +9,9 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('./views/Home.vue')
-    }
+      name: 'todos',
+      component: () => import('./views/TodoApp/component')
+    },
+
   ],
 });

@@ -7,4 +7,4 @@ export const state: TodoState = {
     todos: [],
     error: false,
     errorMessage: ''
-}
+};

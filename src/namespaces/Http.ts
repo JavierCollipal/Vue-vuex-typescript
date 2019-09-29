@@ -27,7 +27,7 @@ export namespace Http {
                 console.log('AXIOS RESPONSE')
                 return response;
             }, (err: any) => {
-                console.log("AXSIOS RESPONSE ERROR");
+                console.log("AXIOS RESPONSE ERROR");
                 return Promise.reject(err);
             })
         }

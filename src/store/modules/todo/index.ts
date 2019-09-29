@@ -18,4 +18,4 @@ export const todoModule: Module<TodoState, RootState> = {
     getters,
     actions,
     mutations
-}
+};

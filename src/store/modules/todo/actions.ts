@@ -1,13 +1,15 @@
+/*
 //Las actions estan encargadas de buscar informacion sobre nuestro state en la api,
 //Cuando una request esta completada, esta mutara a nuestro state,
-//dependiendo la accion requerida. 
+//dependiendo la accion requerida.
+*/
 
 import Vue from 'vue';
-import { ActionContext, ActionTree } from 'vuex';
-import { TodoState, Todo } from '@/store/modules/todo/types'
-import { RootState } from '@/store/types';
-import { AxiosResponse } from 'axios';
-//este tipo define el contexto de nuestra action, en este caso el state Todo
+import {ActionContext, ActionTree} from 'vuex';
+import {Todo, TodoState} from '@/store/modules/todo/types'
+import {RootState} from '@/store/types';
+import {AxiosResponse} from 'axios';
+/*//este tipo define el contexto de nuestra action, en este caso el state Todo*/
 
 
 type TodoActionContext = ActionContext<TodoState, RootState>;
@@ -26,6 +28,7 @@ export const actions: TodoActionTree = {
             const response: AxiosResponse = await Vue.axios({
                 url: '/todos'
             })
+            console.log(response);
             const payload: Todo[] = response && response.data;
             context.commit('todosLoaded', payload);
         } catch (error) {
@@ -79,7 +82,7 @@ export const actions: TodoActionTree = {
 
     async deleteTodo(context: TodoActionContext, todo: Todo) {
         try {
-            const { data } = await Vue.axios({
+            const {data} = await Vue.axios({
                 method: 'DELETE',
                 url: `/todos/${todo.id}`
             });
@@ -92,4 +95,4 @@ export const actions: TodoActionTree = {
             console.log('todo removido');
         }
     }
-}
+};

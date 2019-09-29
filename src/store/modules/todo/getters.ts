@@ -15,4 +15,4 @@ export const getters: TodoGetter = {
         const { todos } = state;
         return todos.filter(todo => !todo.done);
     }
-}
+};

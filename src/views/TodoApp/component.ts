@@ -9,7 +9,7 @@ const namespace: string = 'todoModule';
 
 @Component({
     components: {
-        TodoList, TodoForm,
+        TodoList, TodoForm
     },
     mixins: [Template]
 })

@@ -3,6 +3,8 @@ import Vuex, { StoreOptions } from 'vuex';
 import vuexLocal from '@/plugins/vuex-persist';
 import { RootState } from "@/store/types";
 import { todoModule } from '@/store/modules/todo';
+import { authModule } from "@/store/modules/auth";
+
 Vue.use(Vuex);
 
 const store: StoreOptions<RootState> = {
@@ -11,7 +13,7 @@ const store: StoreOptions<RootState> = {
     appVersion: '0.0.1'
   },
   modules: {
-    todoModule
+    todoModule, authModule
   },
   plugins: [vuexLocal.plugin]
 };
